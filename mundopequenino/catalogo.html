@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Completo - Mundo Pequenino</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="MundoPequeninoLogo.png" alt="Mundo Pequenino" class="logo-img" style="height: 80px;">
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="meninos.html">Meninos</a></li>
+                    <li><a href="meninas.html">Meninas</a></li>
+                    <li><a href="unissex.html">Unissex</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="cart-btn" aria-label="Carrinho de Compras">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Catálogo Completo</h1>
+                <p>Explore toda nossa coleção de roupas infantis</p>
+            </div>
+        </section>
+
+        <section class="catalog">
+            <div class="container">
+                <div class="catalog-filters">
+                    <h3><i class="fas fa-filter"></i> Filtros</h3>
+                    <div class="filter-group">
+                        <label>Categoria:</label>
+                        <select id="categoryFilter" onchange="filterProducts()">
+                            <option value="all">Todas</option>
+                            <option value="meninas">Meninas</option>
+                            <option value="meninos">Meninos</option>
+                            <option value="unissex">Unissex</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Ordenar por:</label>
+                        <select id="sortFilter" onchange="sortProducts()">
+                            <option value="default">Padrão</option>
+                            <option value="price-asc">Menor Preço</option>
+                            <option value="price-desc">Maior Preço</option>
+                            <option value="name">Nome</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="catalogGrid">
+                    <div class="product-card" data-category="meninas" data-price="89.90" data-name="Tendência">
+                        <div class="product-image">
+                            <img src="assets/menina6.jpg" alt="Tendência">
+                            <div class="product-badge">Novo</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Tendência Feminina</h3>
+                            <p class="product-category-2">Meninas</p>
+                            <div class="product-price">R$ 89,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(1, 'Tendência Feminina', 89.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="meninos" data-price="39.90" data-name="Macaquinho">
+                        <div class="product-image">
+                            <img src="assets/menino7.jpg" alt="Macaquinho">
+                            <div class="product-badge sale">Promoção</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Macaquinho</h3>
+                            <p class="product-category-1">Meninos</p>
+                            <div class="product-price">
+                                <span class="old-price">R$ 49,90</span>
+                                <span class="new-price">R$ 39,90</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart(2, 'Macaquinho', 39.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="unissex" data-price="119.90" data-name="Conjunto Verão Amarelo">
+                        <div class="product-image">
+                            <img src="assets/unissex10.jpg" alt="Conjunto Amarelo">
+                        </div>
+                        <div class="product-info">
+                            <h3>Conjunto Verão Amarelo</h3>
+                            <p class="product-category-3">Unissex</p>
+                            <div class="product-price">R$ 119,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(3, 'Conjunto Verão Amarelo', 119.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="meninas" data-price="99.90" data-name="Saia Marrom com Body">
+                        <div class="product-image">
+                            <img src="assets/menina10.jpg" alt="Saia Marrom com Body">
+                        </div>
+                        <div class="product-info">
+                            <h3>Saia Marrom com Body</h3>
+                            <p class="product-category-2">Meninas</p>
+                            <div class="product-price">R$ 99,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(4, 'Saia Marrom com Body', 99.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="meninos" data-price="54.90" data-name="Conjunto Verão">
+                        <div class="product-image">
+                            <img src="assets/menino4.jpg" alt="Conjunto Verão">
+                            <div class="product-badge">Novo</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Conjunto Verão</h3>
+                            <p class="product-category-1">Meninos</p>
+                            <div class="product-price">R$ 54,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(5, 'Conjunto Verão', 54.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="meninas" data-price="69.90" data-name="Roupinha Rosa">
+                        <div class="product-image">
+                            <img src="assets/menina9.jpg" alt="Roupinha Rosa">
+                        </div>
+                        <div class="product-info">
+                            <h3>Roupinha Rosa</h3>
+                            <p class="product-category-2">Meninas</p>
+                            <div class="product-price">R$ 69,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(6, 'Roupinha Rosa', 69.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="meninos" data-price="79.90" data-name="Dino">
+                        <div class="product-image">
+                            <img src="assets/menino9.jpg" alt="Dino">
+                        </div>
+                        <div class="product-info">
+                            <h3>Dino</h3>
+                            <p class="product-category-1">Meninos</p>
+                            <div class="product-price">R$ 69,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(7, 'Dino', 69.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="meninas" data-price="109.90" data-name="Vestido Verão">
+                        <div class="product-image">
+                            <img src="assets/menina2.jpg" alt="Vestido Verão">
+                            <div class="product-badge">Novo</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Vestido Verão</h3>
+                            <p class="product-category-2">Meninas</p>
+                            <div class="product-price">R$ 84,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(8, 'Vestido Verão', 84.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="meninos" data-price="64.90" data-name="Conjuntinho Dino">
+                        <div class="product-image">
+                            <img src="assets/menino8.jpg" alt="Conjuntinho Dino">
+                        </div>
+                        <div class="product-info">
+                            <h3>Conjuntinho Dino</h3>
+                            <p class="product-category-1">Meninos</p>
+                            <div class="product-price">R$ 59,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(9, 'Conjuntinho Dino', 59.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="unissex" data-price="44.90" data-name="Conjuntinhos">
+                        <div class="product-image">
+                            <img src="assets/unissex11.jpg" alt="Conjuntinhos">
+                            <div class="product-badge sale">Promoção</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Conjuntinhos</h3>
+                            <p class="product-category-3">Unissex</p>
+                            <div class="product-price">
+                                <span class="old-price">R$ 59,90</span>
+                                <span class="new-price">R$ 44,90</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart(10, 'Conjuntinhos', 44.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="meninas" data-price="84.90" data-name="Vaquinha">
+                        <div class="product-image">
+                            <img src="assets/menina5.jpg" alt="Vaquinha">
+                        </div>
+                        <div class="product-info">
+                            <h3>Vaquinha</h3>
+                            <p class="product-category-2">Meninas</p>
+                            <div class="product-price">R$ 89,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(11, 'Vaquinha', 89.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="meninos" data-price="94.90" data-name="Pijaminha">
+                        <div class="product-image">
+                            <img src="assets/menino2.jpg" alt="Pijaminha">
+                        </div>
+                        <div class="product-info">
+                            <h3>Pijaminha</h3>
+                            <p class="product-category-1">Meninos</p>
+                            <div class="product-price">R$ 54,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(12, 'Pijaminha', 54.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about-us-footer">
+                    <h3><img src="MundoPequeninoLogo.png" alt="Mundo Pequenino" class="logo-img" style="height: 80px;"></h3>
+                    <p>A melhor loja de roupas infantis com qualidade, conforto e estilo para seu pequeno. Vestindo sonhos desde 2020.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact-info">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone"></i> (11) 98765-4321</p>
+                    <p><i class="fas fa-envelope"></i><a href="mailto:contato@mundopequenino.com.br">vendas@mundopequenino.com.br</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i>Rua das Crianças, 456 - São Paulo, SP - CEP 01234-567</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Siga-nos</h3>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="perfil.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mundo Pequenino. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal do Carrinho -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> Seu Carrinho</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <strong>Total: R$ <span id="cartTotal">0,00</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="toggleCart()">Continuar Comprando</button>
+                <button class="btn btn-primary" onclick="checkout()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

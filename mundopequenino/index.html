@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pequenino - Loja de Roupas Infantis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="MundoPequeninoLogo.png" alt="Mundo Pequenino" class="logo-img" style="height: 80px;">
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="meninos.html">Meninos</a></li>
+                    <li><a href="meninas.html">Meninas</a></li>
+                    <li><a href="unissex.html">Unissex</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="cart-btn" aria-label="Carrinho de Compras">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Bem-vindo ao Mundo Pequenino!</h1>
+                <p>As melhores roupas infantis com qualidade e conforto para seu pequeno.</p>
+                <a href="catalogo.html" class="btn btn-primary">Ver Catálogo Completo</a>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <div class="container">
+                <h2>Produtos em Destaque</h2>
+                <div class="products-grid">
+                    <div class="product-card" data-product-id="1">
+                        <div class="product-image">
+                            <img src="assets/menina6.jpg" alt="Tendência Feminina">
+                            <div class="product-badge">Novo</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Tendência Feminina</h3>
+                            <p class="product-category">Meninas</p>
+                            <div class="product-price">R$ 89,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(1, 'Tendência Feminina', 89.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="2">
+                        <div class="product-image">
+                            <img src="assets/menino7.jpg" alt="Macaquinho">
+                            <div class="product-badge sale">Promoção</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Macaquinho</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">
+                                <span class="old-price">R$ 49,90</span>
+                                <span class="new-price">R$ 39,90</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart(2, 'Macaquinho', 39.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="3">
+                        <div class="product-image">
+                            <img src="assets/unissex10.jpg" alt="Conjunto Verão Amarelo">
+                        </div>
+                        <div class="product-info">
+                            <h3>Conjunto Verão Amarelo</h3>
+                            <p class="product-category">Unissex</p>
+                            <div class="product-price">R$ 119,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(3, 'Conjunto Verão Amarelo', 119.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="4">
+                        <div class="product-image">
+                            <img src="assets/menina10.jpg" alt="Saia Marrom com Body">
+                        </div>
+                        <div class="product-info">
+                            <h3>Saia Marrom com Body</h3>
+                            <p class="product-category">Meninas</p>
+                            <div class="product-price">R$ 99,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(4, 'Saia Marrom com Body', 99.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="5">
+                        <div class="product-image">
+                            <img src="assets/menino4.jpg" alt="Conjunto Verão">
+                            <div class="product-badge">Novo</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Conjunto Verão</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">R$ 54,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(5, 'Conjunto Verão', 54.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="6">
+                        <div class="product-image">
+                            <img src="assets/menina2.jpg" alt="Florido">
+                        </div>
+                        <div class="product-info">
+                            <h3>Vestido Florido</h3>
+                            <p class="product-category">Meninas</p>
+                            <div class="product-price">R$ 69,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(6, 'Vestido Florido', 69.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2>Compre por Categoria</h2>
+                <div class="categories-grid">
+                    <a href="meninas.html" class="category-card">
+                        <div class="category-image">
+                            <img src="assets/categoriamenina.jpg" alt="Roupas para Meninas">
+                        </div>
+                        <h3>Meninas</h3>
+                    </a>
+                    <a href="meninos.html" class="category-card">
+                        <div class="category-image">
+                            <img src="assets/categoriamenino.jpg" alt="Roupas para Meninos">
+                        </div>
+                        <h3>Meninos</h3>
+                    </a>
+                    <a href="catalogo.html" class="category-card">
+                        <div class="category-image">
+                            <img src="assets/categoriauni.jpg" alt="Todos os Produtos">
+                        </div>
+                        <h3>Todos os Produtos</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="container">
+                <h2>Por que escolher a Mundo Pequenino?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Frete Grátis</h3>
+                        <p>Em compras acima de R$ 200,00</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Compra Segura</h3>
+                        <p>Seus dados protegidos</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-undo"></i>
+                        <h3>Troca Fácil</h3>
+                        <p>Até 30 dias para trocar</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Qualidade Premium</h3>
+                        <p>Tecidos confortáveis e duráveis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about-us-footer">
+                    <h3><img src="MundoPequeninoLogo.png" alt="Mundo Pequenino" class="logo-img" style="height: 80px;"></h3>
+                    <p>A melhor loja de roupas infantis com qualidade, conforto e estilo para seu pequeno. Vestindo sonhos desde 2020.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact-info">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone"></i> (11) 98765-4321</p>
+                    <p><i class="fas fa-envelope"></i><a href="mailto:contato@mundopequenino.com.br">vendas@mundopequenino.com.br</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i>Rua das Crianças, 456 - São Paulo, SP - CEP 01234-567</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Siga-nos</h3>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="perfil.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mundo Pequenino. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal do Carrinho -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> Seu Carrinho</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <strong>Total: R$ <span id="cartTotal">0,00</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="toggleCart()">Continuar Comprando</button>
+                <button class="btn btn-primary" onclick="checkout()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

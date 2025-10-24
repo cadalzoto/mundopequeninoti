@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Fictício - Instagram</title>
+    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Fonte Fictícia do Instagram (Billabong) */
+        @font-face {
+            font-family: 'Billabong';
+            src: url('https://cdn.rawgit.com/milktrader/billabong/master/billabong.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Variáveis de Configuração do Perfil (Fácil Alteração) -->
+    <script>
+        const PROFILE_DATA = {
+            username: "mundopequenino",
+            name: "Mundo Pequenino",
+            bio: "Loja de roupas infantis 🌈\nVenha conhecer o fantástico mundo das crianças ✨\n👶🏻 Bebê e Infantil\n",
+            link: "linktr.ee/mundopequenino",
+            postsCount: "1.312",
+            followersCount: "5.905",
+            followingCount: "2.179",
+            profilePic: "./assets/MundoPequeninoLogo.png", // Substitua pelo caminho da sua imagem de perfil
+            highlights: [
+                {  name: "TENDÊNCIAS", 
+                    cover: "./assets/destaque1.png",
+                    stories: [
+                        "./assets/tend1.jpg",
+                        "./assets/tend2.jpg",
+                        "./assets/tend3.jpg"
+                        
+                    ]
+                },
+                {  name: "VERÃO", 
+                    cover: "./assets/verao.jpg",
+                    stories: [
+                        "./assets/verao1.jpg",
+                        "./assets/verao2.jpg",
+                        "./assets/verao3.jpg",           
+                    ]
+                },
+                {  name: "OUTONO", 
+                    cover: "./assets/destaque3.jpg",
+                    stories: [
+                        "./assets/destaque3_s1.jpg",
+                        "./assets/destaque3_s2.jpg",
+                        "./assets/destaque3_s3.jpg"
+                    ]
+                }
+            ],
+            posts: [
+                { id: 1, image: "./assets/PromocaoConjuntos.png", description: "Conjunto lindo para o verão! Disponível em vários tamanhos.", date: "15 de Outubro de 2025" }, // Substitua pelo caminho da sua imagem
+                { id: 2, image: "./assets/DiaCrianca.png", description: "Novidades chegando na loja, venha conferir!", date: "05 de Outubro de 2025" }, // Substitua pelo caminho da sua imagem
+                { id: 3, image: "./assets/NovaColecao.png", description: "Look do dia: conforto e estilo para os pequenos.", date: "20 de Outubro de 2025" }, // Substitua pelo caminho da sua imagem
+                { id: 4, image: "./assets/ursinhos.png", description: "Conjuntos que fazem o seu bebê ficar estiloso!.", date: "12 de Outubro de 2025" }, // Substitua pelo caminho da sua imagem
+                { id: 5, image: "./assets/IntegranteNovo.png", description: "Venha Conhecer Nossas Novidades.", date: "25 de Outubro de 2025" }, // Substitua pelo caminho da sua imagem
+                { id: 6, image: "./assets/natal.png", description: "Esta chegando a tão esperada época do ano! Conheça as nossas peças imperdíveis para o seu bebê.", date: "10 de Outubro de 2025" },
+            ]
+        };
+    </script>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo-text">Instagram</h1>
+            <div class="nav-actions">
+                <a href="#" class="btn-primary">Entrar</a>
+                <a href="#">Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="profile-info">
+                <div class="profile-photo-container">
+                    <img src="" id="profile-pic"  alt="Foto de Perfil" class="profile-photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-header">
+                        <h2 id="profile-username" class="profile-username"></h2>
+                        <div class="profile-actions">
+                            <button id="Follow">Seguir</button>
+                            <button>Mensagem</button>
+                            <i class="fas fa-ellipsis-h settings-icon"></i>
+                        </div>
+                    </div>
+                    <div class="profile-stats desktop-only">
+                        <div id="stats-posts"><span></span> posts</div>
+                        <div id="stats-followers"><span></span> seguidores</div>
+                        <div id="stats-following"><span></span> seguindo</div>
+                    </div>
+                    <div class="profile-bio">
+                        <p id="bio-name" class="name"></p>
+                        <p id="bio-text"></p>
+                        <a id="bio-link" href="#" class="link"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section class="highlights-section">
+            <ul id="highlights-list" class="highlights-list">
+                <!-- Destaques serão injetados aqui pelo JS -->
+            </ul>
+        </section>
+
+        <div id="highlightModal" class="modal">
+            <div class="highlight-content">
+                <img id="highlight-image" src="" alt="Destaque">
+                <button class="close-btn" onclick="closeHighlight()">&times;</button>
+                 <button class="prev-btn" onclick="prevStory()">&#10094;</button>
+                <button class="next-btn" onclick="nextStory()">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <section class="post-tabs">
+            <a href="#" class="active"><i class="fas fa-th"></i> Publicações</a>
+            <a href="#"><i class="fas fa-video"></i> Reels</a>
+            <a href="#"><i class="fas fa-bookmark"></i> Salvos</a>
+            <a href="#"><i class="fas fa-user-tag"></i> Marcados</a>
+        </section>
+
+        <!-- Post Grid -->
+        <section class="post-grid-section">
+            <div id="post-grid" class="post-grid">
+                <!-- Posts serão injetados aqui pelo JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Post Modal -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <div id="modal-image-container" class="modal-image-container">
+                <!-- Imagem do Post -->
+            </div>
+            <div class="modal-details">
+                <div class="modal-header">
+                    <div class="user-info">
+                        <img id="modal-profile-pic" src="" alt="Foto de Perfil" class="profile-photo">
+                        <span id="modal-username" class="username"></span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <div class="modal-body-content">
+                    <p id="modal-description" class="modal-description"></p>
+                </div>
+                <div id="modal-date" class="modal-date"></div>
+            </div>
+        </div>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+    </div>
+
+    <script src="perfil.js"></script>
+
+</body>
+</html>
+

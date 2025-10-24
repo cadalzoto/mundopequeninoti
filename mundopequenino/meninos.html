@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roupas para Meninos - Mundo Pequenino</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="MundoPequeninoLogo.png" alt="Mundo Pequenino" class="logo-img" style="height: 80px;">
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="meninos.html">Meninos</a></li>
+                    <li><a href="meninas.html">Meninas</a></li>
+                    <li><a href="unissex.html">Unissex</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="cart-btn" aria-label="Carrinho de Compras">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header boys">
+            <div class="container">
+                <h1><i class="fas fa-male"></i> Roupas para Meninos</h1>
+                <p>Estilo e conforto para os pequenos aventureiros</p>
+            </div>
+        </section>
+
+        <section class="catalog">
+            <div class="container">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/menino1.jpg" alt="body de urso">
+                            <div class="product-badge sale">Promoção</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>body de urso</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">
+                                <span class="old-price">R$ 49,90</span>
+                                <span class="new-price">R$ 39,90</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart(2, 'body de urso', 39.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/menino2.jpg" alt="Pijaminha">
+                            <div class="product-badge">Novo</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Pijaminha</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">R$ 54,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(5, 'Pijaminha', 54.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/menino9.jpg" alt="Dino">
+                        </div>
+                        <div class="product-info">
+                            <h3>Dino</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">R$ 69,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(7, 'Dino', 69.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/menino4.jpg" alt="Conjunto Verão">
+                        </div>
+                        <div class="product-info">
+                            <h3>Conjunto Verão</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">R$ 85,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(9, 'Conjunto Verão', 85.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/menino10.jpg" alt="Esportivo">
+                        </div>
+                        <div class="product-info">
+                            <h3>Esportivo</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">R$ 94,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(12, 'Esportivo', 94.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/menino7.jpg" alt="Macaquinho">
+                            <div class="product-badge">Novo</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Macaquinho</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">R$ 89,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(13, 'Macaquinho', 89.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/menino8.jpg" alt="Conjuntinho Dino">
+                        </div>
+                        <div class="product-info">
+                            <h3>Conjuntinho Dino</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">R$ 59,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(14, 'Conjuntinho Dino', 59.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/menino5.jpg" alt="King">
+                            <div class="product-badge sale">Promoção</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>King</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">
+                                <span class="old-price">R$ 49,90</span>
+                                <span class="new-price">R$ 34,90</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart(15, 'King', 34.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/menino3.jpg" alt="Tigrão">
+                        </div>
+                        <div class="product-info">
+                            <h3>Tigrão</h3>
+                            <p class="product-category">Meninos</p>
+                            <div class="product-price">R$ 119,90</div>
+                            <button class="btn btn-add-cart" onclick="addToCart(16, 'Tigrão', 119.90)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about-us-footer">
+                    <h3><img src="MundoPequeninoLogo.png" alt="Mundo Pequenino" class="logo-img" style="height: 80px;"></h3>
+                    <p>A melhor loja de roupas infantis com qualidade, conforto e estilo para seu pequeno. Vestindo sonhos desde 2020.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact-info">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone"></i> (11) 98765-4321</p>
+                    <p><i class="fas fa-envelope"></i><a href="mailto:contato@mundopequenino.com.br">vendas@mundopequenino.com.br</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i>Rua das Crianças, 456 - São Paulo, SP - CEP 01234-567</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Siga-nos</h3>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="perfil.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mundo Pequenino. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal do Carrinho -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> Seu Carrinho</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <strong>Total: R$ <span id="cartTotal">0,00</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="toggleCart()">Continuar Comprando</button>
+                <button class="btn btn-primary" onclick="checkout()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
